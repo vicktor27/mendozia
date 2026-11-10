@@ -1,57 +1,68 @@
-# Mendozia IA
+# MENDOZIA IA · Gestión de justificantes académicos
 
-**Proyecto de gestión digital de justificantes académicos desarrollado con AppSheet, Google Drive y Google Apps Script.**
+**Proyecto impulsado por el MAE David Rodríguez Ceballos, desarrollado con la colaboración del Dr. Víctor Manuel Solís Cardoza.**
 
 ## Presentación
 
-Mendozia IA es un proyecto desarrollado para apoyar la gestión de justificantes académicos mediante las herramientas de Google que la institución ya tiene contratadas.
+MENDOZIA IA es la evolución del trabajo iniciado como **Proyecto David**: una solución para recibir, revisar y resolver solicitudes de justificantes académicos mediante las herramientas de Google que la institución ya tiene contratadas.
 
-El proyecto integra una aplicación en AppSheet, recursos de almacenamiento en Google Drive y componentes de automatización en Google Apps Script. Su planteamiento aprovecha el entorno tecnológico existente para atender una necesidad de gestión académica.
+El proceso original requería que el alumno presentara su evidencia al coordinador y que este notificara manualmente a los docentes. El sistema integra la captura de la solicitud, la revisión de evidencias, la autorización de días y las notificaciones por correo en un mismo flujo.
+
+**La decisión de autorizar o rechazar corresponde al coordinador.** MENDOZIA automatiza el registro, las validaciones y las comunicaciones.
 
 ## Participantes
 
 | Participante | Participación |
 | --- | --- |
-| **MAE David Rodríguez Ceballos** (Maestro en Educación) | Principal impulsor del proyecto |
+| **MAE David Rodríguez Ceballos** — Maestro en Educación | Principal impulsor del proyecto |
 | **Dr. Víctor Manuel Solís Cardoza** | Colaborador en el desarrollo del proyecto |
 
-## Propósito
+## Funcionamiento general
 
-Apoyar la gestión digital de justificantes académicos mediante una solución integrada en el ecosistema de Google, con acceso y manejo de la información conforme a la configuración institucional.
+1. El alumno presenta su solicitud en **Google Forms**, con su grupo, registro del catálogo, días solicitados, motivo y evidencia.
+2. Las respuestas se conservan en **Google Sheets** y el motor registra la solicitud con un folio.
+3. El coordinador recibe un aviso y revisa la evidencia desde el panel de computadora o la interfaz móvil desarrollada para la versión 3.
+4. Selecciona los días que autoriza, o rechaza la solicitud con observaciones, y pulsa **Confirmar**.
+5. El proceso automático registra la resolución y atiende los avisos por correo: una autorización notifica al alumno y a los docentes configurados; un rechazo se comunica al alumno.
 
-## Herramientas utilizadas
+## Funciones desarrolladas
 
-| Herramienta | Función dentro del entorno del proyecto |
-| --- | --- |
-| **Google AppSheet** | Plataforma de la aplicación. |
-| **Google Drive** | Gestión y almacenamiento de archivos del proyecto. |
-| **Google Apps Script** | Scripts y automatizaciones complementarias. |
+- Catálogos de grupos, alumnos y docentes, leídos por encabezados y sin rangos fijos de filas.
+- Selección de días mediante calendario en el panel y aprobación total o parcial.
+- Evidencias en Drive con acceso del coordinador; los avisos docentes no incluyen evidencia ni motivo privado.
+- Confirmación explícita, decisiones protegidas y reenvíos deliberados.
+- Estados visuales y registro por destinatario en **Envíos**.
+- Recuperación de respuestas faltantes y control de solicitudes duplicadas.
+- Proceso programado único **cicloMendozia**.
+- Diagnóstico en **Errores MENDOZIA**, compatible con el nombre anterior **Errores Mendoza**.
+- Sincronización automática de grupos y alumnos con el formulario.
+- Interfaz web móvil con búsqueda y separación entre solicitudes pendientes y resueltas.
 
-## Seguridad y control de acceso
+## Plataforma y seguridad
 
-**La seguridad de Mendozia IA se apoya en la infraestructura y los mecanismos de autenticación, autorización y control de acceso de las herramientas de Google que la institución ya tiene contratadas.**
+La entrega revisada utiliza **Google Forms, Google Sheets, Google Drive y Google Apps Script**, con interfaces HTML para computadora y móvil.
 
-La administración del acceso se realiza dentro de ese entorno, de acuerdo con los usuarios, permisos y políticas configurados para la aplicación y sus recursos:
+**La infraestructura, la autenticación y los permisos base se apoyan en las herramientas de Google ya contratadas por la institución.** El código complementa esos controles al comprobar, en cada operación del panel y la web, que la cuenta corresponda al propietario o al coordinador.
 
-- **AppSheet** ofrece mecanismos para identificar usuarios y controlar el acceso a la aplicación y a los datos.
-- **Google Drive** administra los permisos de acceso a archivos y carpetas.
-- **Google Apps Script** utiliza las autorizaciones de Google para acceder a los servicios y ejecutar las automatizaciones, según su configuración.
+Los permisos de Drive, los del libro y la configuración de publicación siguen formando parte de la administración institucional. [Consultar arquitectura y seguridad](docs/funcionamiento-y-arquitectura.md).
 
-Estos mecanismos forman parte de la plataforma de Google. Su aplicación efectiva depende de la configuración de la solución y de la administración de las cuentas y los recursos institucionales.
+## Documentación
+
+- [Funcionamiento, reglas, arquitectura y seguridad](docs/funcionamiento-y-arquitectura.md).
+- [Operación, mantenimiento y solución de incidencias](docs/operacion-y-mantenimiento.md).
+- [Evolución del proyecto y validación](docs/evolucion-y-validacion.md).
+
+## Accesos al sistema
+
+Las URLs del formulario, del libro de control y de la aplicación móvil **no se publican por indicación de los participantes**. Su distribución se mantiene en los canales institucionales autorizados.
 
 ## Estado del proyecto
 
-**Desarrollo concluido**, incluidos los cambios realizados durante su construcción.
+**Proyecto desarrollado. Entrega de referencia: MENDOZIA 3.0**, con la actualización de sincronización de catálogos.
 
-Este repositorio documenta la presentación del proyecto desarrollado. La aplicación, sus recursos y sus automatizaciones pertenecen al entorno de Google utilizado para su funcionamiento.
+Esta documentación se elaboró a partir de la conversación de desarrollo, los archivos de la entrega y ocho suites locales ejecutadas el **10 de noviembre de 2026**. Describe el código revisado; no sustituye la comprobación de la versión y los permisos desplegados en Google.
 
 ## Líneas de investigación y ejes
 
 - **Líneas de investigación:** **PENDIENTES POR DEFINIR**
 - **Ejes:** **PENDIENTES POR DEFINIR**
-
-## Referencias de la plataforma
-
-- [Seguridad en AppSheet](https://support.google.com/appsheet/answer/10105078).
-- [Permisos de archivos y carpetas en Google Drive](https://support.google.com/drive/answer/7166529).
-- [Autorización de servicios en Google Apps Script](https://developers.google.com/apps-script/guides/services/authorization?hl=es).
