@@ -10,10 +10,10 @@ El proyecto integra una aplicación en AppSheet, recursos de almacenamiento en G
 
 ## Participantes
 
-| Participante |
-| --- |
-| **Dr. Víctor Manuel Solís Cardoza** |
-| **Profesor David Rodríguez Ceballos** |
+| Participante | Participación |
+| --- | --- |
+| **MAE David Rodríguez Ceballos** (Maestro en Educación) | Principal impulsor del proyecto |
+| **Dr. Víctor Manuel Solís Cardoza** | Colaborador en el desarrollo del proyecto |
 
 ## Propósito
 
